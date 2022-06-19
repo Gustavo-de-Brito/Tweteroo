@@ -21,7 +21,8 @@ app.post("/tweets", (req, res) => {
   const tweet = req.body;
 
   tweets.push(tweet);
-  console.log(tweets);
+
+  res.send("OK");
 });
 
 app.listen(5000);
