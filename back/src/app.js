@@ -6,10 +6,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-let user;
+const users = [];
 
 app.post("/sign-up", (req, res) => {
-  user = req.body;
+  const user = req.body;
+
+  users.push(user);
 });
 
 app.listen(5000);
