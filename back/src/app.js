@@ -19,10 +19,15 @@ app.post("/sign-up", (req, res) => {
 
 app.post("/tweets", (req, res) => {
   const tweet = req.body;
+  const { avatar } = users.find( user => user.username === tweet.username);
 
-  tweets.push(tweet);
+  tweets.push({ ...tweet, avatar });=
 
   res.send("OK");
+});
+
+app.get("/tweets", (req, res) => {
+  
 });
 
 app.listen(5000);
